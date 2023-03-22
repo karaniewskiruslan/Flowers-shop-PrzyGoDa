@@ -21,20 +21,6 @@ select {
   font: inherit;
 }
 
-.loco {
-  font-size: 4rem;
-}
-
-.loco ul {
-  list-style: none;
-  padding: 0 0 0 2rem;
-}
-
-a {
-  color: inherit;
-  text-decoration-line: none;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

@@ -1,0 +1,25 @@
+:root {
+  --Nav__background: #40b8a8;
+}
+
+nav {
+  align-items: center;
+  background: var(--Nav__background);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem 0 3rem;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.25rem;
+  margin: 0.75rem;
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
