@@ -1,0 +1,169 @@
+$backdrop__color: #00000093;
+
+@keyframes openAnimation {
+  from {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.flower-assept {
+  animation: openAnimation 0.31415s linear;
+  backdrop-filter: blur(10px);
+  background-color: $backdrop__color;
+  display: grid;
+  height: 100vh;
+  inset: 0 0 auto auto;
+  place-items: center;
+  position: fixed;
+  text-align: center;
+  width: 100vw;
+  z-index: 3;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  &__container {
+    --close-button-size: 2.25rem;
+    --x: 2;
+    --y: -2.5;
+    --calculation: calc((var(--close-button-size) * var(--x)) / var(--y));
+
+    aspect-ratio: 2 / 3;
+    background-color: $flower__background--select;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 1.75rem;
+    position: relative;
+
+    &[data-length_proove="true"]::before,
+    &[data-length_proove="true"]::after {
+      position: absolute;
+      background-color: $flower__background--select-active;
+      border-radius: 100vw;
+      display: block;
+      font-size: 0.75rem;
+      outline: 1px solid $Text__color--White;
+      padding: 0.25rem 0.5rem;
+      z-index: 2;
+    }
+
+    &[data-length_proove="true"][data-ontop="false"]::before {
+      content: "scroll up";
+      inset: 16% 50% auto auto;
+      transform: translate(50%);
+      transition: all 0.31415s;
+
+      &[data-ontop="true"] {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+
+    &[data-length_proove="true"][data-onbottom="false"]::after {
+      content: "scroll down";
+      inset: auto auto 18.5% 50%;
+      transform: translate(-50%);
+      transition: all 0.31415s;
+
+      &[data-onbottom="true"] {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+
+    .closeButton {
+      aspect-ratio: 1;
+      background: url("/src/img/icons/burger-menu/menuClose.png");
+      background-color: $costCart;
+      background-size: cover;
+      border-radius: 100vw;
+      position: absolute;
+      inset: var(--calculation) var(--calculation) auto auto;
+      width: var(--close-button-size);
+      cursor: pointer;
+    }
+
+    &--buttonHolder {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    &--order {
+      overflow-y: auto;
+      height: 20rem;
+      display: grid;
+      grid-template-rows: 1fr;
+      gap: 1rem;
+      position: relative;
+      scroll-snap-type: y mandatory;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &__PositionContainer {
+        align-items: center;
+        background-color: $flower__background--select-active;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.75rem;
+        height: 20rem;
+        scroll-snap-align: center;
+        text-align: center;
+        width: -webkit-fill-available;
+
+        &--Info {
+          display: flex;
+          justify-content: space-around;
+        }
+
+        img {
+          aspect-ratio: 1;
+          width: 7.5rem;
+          border-radius: 1rem;
+          margin: 1rem;
+        }
+
+        h3 {
+          font-size: 1rem;
+        }
+
+        article {
+          display: flex;
+          justify-content: space-around;
+          flex-direction: column;
+
+          span div {
+            display: flex;
+            justify-content: space-around;
+          }
+        }
+
+        &--Total {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+
+    h2 {
+      color: $Text__color--White;
+      font-size: 1.75rem;
+    }
+
+    button {
+      @include buttons;
+    }
+  }
+}

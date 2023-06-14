@@ -1,0 +1,70 @@
+@keyframes logo_transition {
+  from {
+    transform: translate(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+nav {
+  align-items: center;
+  background-color: $Pirple__background;
+  border-radius: 100vw;
+  display: flex;
+  inset: 1rem 0 auto;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 3rem;
+  position: fixed;
+  width: 80%;
+  z-index: 2;
+
+  img {
+    animation: logo_transition 1s cubic-bezier(0.32, 1.06, 1, 1);
+    aspect-ratio: 987 / 253;
+    background-color: #dad2d2;
+    border-radius: 100vw;
+    height: 3rem;
+    inset: 1rem auto auto;
+    margin: 0.25rem 0;
+    object-fit: contain;
+    padding: 0.5rem 0;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      color: $Text__color--White;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 1rem;
+      margin-left: 1rem;
+      padding: 0.25rem 0.5rem;
+      position: relative;
+      text-transform: uppercase;
+    }
+
+    li[cartvalue]::after {
+      --distanse: -0.6rem;
+
+      align-items: center;
+      aspect-ratio: 1;
+      background: $costCart;
+      border-radius: 50%;
+      color: $Text__color--White;
+      content: attr(cartvalue);
+      display: flex;
+      font-size: 0.8rem;
+      font-weight: 700;
+      height: 1rem;
+      justify-content: center;
+      inset: 100% 0 0 100%;
+      position: absolute;
+      transform: translate(var(--distanse), var(--distanse));
+    }
+  }
+}

@@ -1,0 +1,21 @@
+footer {
+  align-items: center;
+  background: $Pirple__background;
+  color: $Text__color--White;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  padding: 0.75rem 3rem;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    li {
+      display: inline-block;
+      margin: 0 2rem;
+    }
+  }
+}

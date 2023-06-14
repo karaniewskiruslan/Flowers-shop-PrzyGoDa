@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
+@import url("./img/icofont/icofont.min.css");
+@import url("./img/icofont/fonts/icofont.min.css");
+
+$Body__background: #d4e7ed;
+$Pirple__background: #d0a6eccb;
+$Text__color--White: #363636;
+$ScrollBar__background: #4d3b8db6;
+$flower__background: #d4e7ed;
+$flower__background--select: #d0a6ec;
+$flower__background--select-active: #9facb1;
+$costCart: #ff5d5d;
+
+body::-webkit-scrollbar {
+  background: transparent;
+  width: 0.4rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: $ScrollBar__background;
+  border-radius: 10px;
+}
+
+// --- MIXINS ---
+
+@mixin formating {
+  color: $Text__color--White;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin: 5rem 0 0;
+  padding: 0.5rem 3rem 1rem;
+
+  h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding-bottom: 0.5rem;
+
+    &:not(:first-child) {
+      padding-top: 0.5rem;
+    }
+  }
+}
+
+@mixin buttons {
+  background: $flower__background;
+  border: none;
+  border-radius: 100vw;
+  color: $Text__color--White;
+  font-size: 0.75rem;
+  font-weight: 200;
+  line-height: 1.25rem;
+  outline: 1px solid $Pirple__background;
+  padding: 0.25rem 0.75rem;
+
+  &:active {
+    background-color: $flower__background--select-active;
+  }
+}
+
+// --- MIXINS ---
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration-line: none;
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  background: $Body__background;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  margin: 0;
+  overflow: overlay;
+  overflow-x: hidden;
+}
+
+#root {
+  position: relative;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@import "./scssComponents/other/navBar";
+
+@import "./scssComponents/Main_page/001_bcImg";
+@import "./scssComponents/Main_page/002_container";
+@import "./scssComponents/Cart_page/001_cart";
+
+@import "./scssComponents/About_page/001_about";
+@import "./scssComponents/Cart_page/002_alarm";
+
+@import "./scssComponents/other/confirmPage";
+@import "./scssComponents/other/dialogPage";
+
+@import "./scssComponents/other/footer";
+
+.Flowers__Contact {
+  @include formating;
+
+  img {
+    mix-blend-mode: darken;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 14px;
+  }
+
+  #ChoosingFlowers {
+    .ChoosingFlowers__container {
+      --number_of_columns: 3;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 12px;
+  }
+
+  #ChoosingFlowers {
+    .ChoosingFlowers__container {
+      --number_of_columns: 2;
+    }
+  }
+
+  nav {
+    --ul--width: 0.75rem;
+    position: relative;
+
+    ul {
+      align-items: center;
+      background: $Pirple__background;
+      border: 1px solid $Text__color--White;
+      border-radius: 1.5rem;
+      color: $Text__color--White;
+      display: flex;
+      flex-direction: column;
+      inset: 0 1rem auto auto;
+      justify-content: center;
+      list-style: none;
+      position: absolute;
+      transform: translate(205%, var(--ul--width));
+      transition: 0.314s cubic-bezier(0.42, 0, 0, 1);
+      z-index: 10;
+
+      &[data-open="true"] {
+        transform: translate(0, var(--ul--width));
+      }
+
+      &::before {
+        aspect-ratio: 1;
+        background: url("../src/img/icons/burger-menu/menu.png");
+        background-size: cover;
+        background-color: $Pirple__background;
+        border-radius: 100vw;
+        content: "";
+        cursor: pointer;
+        display: block;
+        height: 2rem;
+        inset: 0;
+        opacity: 1;
+        position: absolute;
+        transform: translateX(-700%);
+        transition: 0.314s;
+      }
+
+      &[data-open="true"]::before {
+        opacity: 0.3;
+        transform: translateX(-125%);
+      }
+
+      li {
+        color: $Text__color--White;
+        font-size: 1.75rem;
+        margin: 0.75rem 0;
+        padding: 0 1rem;
+      }
+
+      li[cartvalue]::after {
+        --distanse: -1.25rem;
+
+        font-size: 1.25rem;
+        height: 1.75rem;
+      }
+    }
+  }
+
+  .Flowers__Cart {
+    --CartContainerWidth: auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 10px;
+  }
+  // #ChoosingFlowers {
+  //   .ChoosingFlowers__container {
+  //     --number_of_columns: 2;
+  //   }
+  // }
+}

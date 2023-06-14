@@ -1,0 +1,50 @@
+@keyframes openAlarm {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes closeAlarm {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#alarm_message {
+  animation: openAlarm 0.31415s cubic-bezier(0.18, 0.64, 0.55, 0.94),
+    closeAlarm 0.31415s cubic-bezier(0.18, 0.64, 0.55, 0.94) 4.78585s;
+
+  align-items: flex-start;
+  aspect-ratio: 3 / 1;
+  background-color: $costCart;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  justify-content: space-around;
+  inset: auto auto 1rem 1rem;
+  line-height: 1.5rem;
+  position: fixed;
+  padding: 1.25rem;
+  width: 30rem;
+
+  h2 {
+    text-align: center;
+  }
+
+  h3 {
+    margin: 0.5rem 0;
+    text-align: left;
+  }
+
+  button {
+    @include buttons;
+    width: fit-content;
+  }
+}

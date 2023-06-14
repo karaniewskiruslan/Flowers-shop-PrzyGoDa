@@ -1,0 +1,56 @@
+@keyframes mainPafe_img_transition {
+  from {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#flower-Background {
+  animation: mainPafe_img_transition 0.657s cubic-bezier(0.15, 0.8, 0.43, 1.01);
+  background: url("./img/lavender-field.jpeg");
+  background-position: 15% 40%;
+  background-size: cover;
+  border-radius: 4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 30rem;
+  margin: 2.75rem 2rem;
+  overflow: hidden;
+  place-items: center;
+  position: relative;
+  text-align: center;
+
+  div {
+    margin: inherit;
+    position: absolute;
+
+    h1 {
+      color: lighten($Text__color--White, 70);
+      font-size: 2.75rem;
+      font-weight: 700;
+    }
+
+    h2 {
+      color: lighten($Text__color--White, 70);
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.intro {
+  color: $Text__color--White;
+  font-size: 1.25rem;
+  padding: 1rem 3rem;
+  text-align: center;
+
+  h2 {
+    color: $Text__color--White;
+    font-size: 2.75rem;
+    font-weight: 700;
+  }
+}
