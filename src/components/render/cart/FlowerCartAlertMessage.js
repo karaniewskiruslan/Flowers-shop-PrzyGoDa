@@ -36,7 +36,7 @@ export const FlowerCartAlertMessage = () => {
       <AlarmText />
       {!cartRender.length && (
         <button>
-          <Link to="/">To main page</Link>
+          <Link to="/main-page">To main page</Link>
         </button>
       )}
     </section>
