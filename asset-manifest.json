@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Flowers-shop-PrzyGoDa/static/css/main.2c09ca63.css",
+    "main.js": "/Flowers-shop-PrzyGoDa/static/js/main.71ae20fd.js",
+    "static/media/lavender-field.jpeg": "/Flowers-shop-PrzyGoDa/static/media/lavender-field.08ab786d97c24d1d712b.jpeg",
+    "static/media/menuClose.png": "/Flowers-shop-PrzyGoDa/static/media/menuClose.92148a25be272e632484.png",
+    "static/media/icofont.woff": "/Flowers-shop-PrzyGoDa/static/media/icofont.9ebcab9029fc88697a92.woff",
+    "static/media/icofont.woff2": "/Flowers-shop-PrzyGoDa/static/media/icofont.63ae90921ef386f80b6b.woff2",
+    "index.html": "/Flowers-shop-PrzyGoDa/index.html",
+    "main.2c09ca63.css.map": "/Flowers-shop-PrzyGoDa/static/css/main.2c09ca63.css.map",
+    "main.71ae20fd.js.map": "/Flowers-shop-PrzyGoDa/static/js/main.71ae20fd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2c09ca63.css",
+    "static/js/main.71ae20fd.js"
+  ]
+}
