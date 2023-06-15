@@ -12,6 +12,11 @@ Make your or someone day better with "PrzyGoDa"
 
 ## Screens from page
 
+![Screenshot (17)](https://github.com/Karanelus/Flowers-shop-PrzyGoDa/assets/113471991/dfb8c0c0-1768-48fc-b00d-588fd61497ee)
+![Screenshot (18)](https://github.com/Karanelus/Flowers-shop-PrzyGoDa/assets/113471991/e94df50b-06cb-4e50-8b47-680af9cc983d)
+![Screenshot (19)](https://github.com/Karanelus/Flowers-shop-PrzyGoDa/assets/113471991/17e0a4fd-3425-455c-a6e4-ef510de315d9)
+![Screenshot (20)](https://github.com/Karanelus/Flowers-shop-PrzyGoDa/assets/113471991/f3b5dddf-1958-4f66-9be5-febef122bda8)
+
 #### Contact with me
 
 [LinkedIn](https://www.linkedin.com/in/karanelus/) /
