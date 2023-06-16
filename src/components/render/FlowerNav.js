@@ -19,7 +19,7 @@ export const FlowerNav = () => {
         }}
       >
         <li>
-          <Link to="/main-page">Main page</Link>
+          <Link to="/Flowers-shop-PrzyGoDa">Main page</Link>
         </li>
         <li cartvalue={cartValue.cartItem}>
           <Link to="/flowerCart">Cart</Link>
