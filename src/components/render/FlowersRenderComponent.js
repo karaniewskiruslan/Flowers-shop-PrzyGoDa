@@ -68,7 +68,7 @@ export const FlowersRenderComponent = () => {
       <FlowerNav />
       <main>
         <Routes>
-          <Route path="Flowers-shop-PrzyGoDa" element={<FlowerMainPage />} />
+          <Route path="main-page" element={<FlowerMainPage />} />
           <Route path="flowerCart" element={<FlowerCart />} />
           <Route path="flowerAbout" element={<FlowerAbout />} />
           <Route path="flowerContact" element={<FlowerContact />} />
