@@ -1,12 +1,10 @@
 import React, { useContext, useState } from "react";
 import { CartItemsContext } from "../../../context/CartContext";
 import flowers from "../../flowerslist/flowersList";
-import { ObjectContext } from "../../../context/ObjectContext";
 import { CART_RENDER_ACTION_TYPE } from "../../../redusers/cartOrderRender";
 
 export const FlowerOptions = () => {
-  const { cartValue, setCartValue } = useContext(CartItemsContext);
-  const { cartRender, dispatchRender } = useContext(ObjectContext);
+  const { cartValue, setCartValue, cartRender, dispatchRender, dialogPageRef } = useContext(CartItemsContext);
 
   const [work, setWork] = useState({
     ...flowers.map((el) => {
@@ -21,22 +19,18 @@ export const FlowerOptions = () => {
     const selectedEl = selectElements.indexOf(e.target);
     const selectedElIndex = selectElements[selectedEl].selectedIndex;
 
-    let selectedCostChanged = (work[selectedEl] =
-      flowers[selectedEl]["prise"][`option_${selectedElIndex}`]);
+    let selectedCostChanged = (work[selectedEl] = flowers[selectedEl]["prise"][`option_${selectedElIndex}`]);
     setWork({ ...work, selectedCostChanged });
   };
 
   const toggleClickAddtocart = (e) => {
     const selectElementsSelected = [...document.querySelectorAll("select")];
-    const selectElements = [
-      ...document.querySelectorAll(".buttonHolder button:first-child"),
-    ];
+    const selectElements = [...document.querySelectorAll(".buttonHolder button:first-child")];
     const selectedEl = selectElements.indexOf(e.target);
     const workCostSrt = work[selectedEl];
     const dispatchData = flowers.find((i) => i.id === selectedEl);
     const dispatchDataProved = cartRender.find((i) => i.id === selectedEl)?.id;
-    const selectElementsSelectedId =
-      selectElementsSelected[selectedEl].selectedIndex;
+    const selectElementsSelectedId = selectElementsSelected[selectedEl].selectedIndex;
 
     setCartValue({
       cartItem: cartValue.cartItem + 1,
@@ -71,7 +65,9 @@ export const FlowerOptions = () => {
   };
 
   const toggleClickBuyNow = () => {
-    document.querySelector("dialog").showModal();
+    const refShrt = dialogPageRef.current;
+
+    refShrt.showModal();
   };
 
   return flowers.map((element) => {
@@ -87,10 +83,7 @@ export const FlowerOptions = () => {
           </section>
           <section className="ChoosingFlowers__container__section__part--bottom">
             <form onChange={toggleFormCostchange}>
-              <select
-                name="NumberOfflowers"
-                className="ChoosingFlowers__container__section__select"
-              >
+              <select name="NumberOfflowers" className="ChoosingFlowers__container__section__select">
                 {bouquetOption.map((el, number) => {
                   let bouquet = el[1];
 

@@ -3,6 +3,7 @@
 @import url("./img/icofont/fonts/icofont.min.css");
 
 $Body__background: #d4e7ed;
+$Backdrop__color: #00000093;
 $Pirple__background: #d0a6eccb;
 $Text__color--White: #363636;
 $ScrollBar__background: #4d3b8db6;
@@ -27,7 +28,7 @@ body::-webkit-scrollbar-thumb {
   color: $Text__color--White;
   font-size: 1.5rem;
   line-height: 2rem;
-  margin: 5rem 0 0;
+  margin-top: 7.5rem;
   padding: 0.5rem 3rem 1rem;
 
   h2 {
@@ -44,7 +45,7 @@ body::-webkit-scrollbar-thumb {
 @mixin buttons {
   background: $flower__background;
   border: none;
-  border-radius: 100vw;
+  border-radius: 100dvw;
   color: $Text__color--White;
   font-size: 0.75rem;
   font-weight: 200;
@@ -89,13 +90,13 @@ a {
 
 html {
   font-size: 20px;
-  height: 100vh;
+  height: 100dvh;
 }
 
 #root {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 body {
@@ -107,8 +108,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 @import "./scssComponents/other/navBar";
@@ -185,7 +185,7 @@ code {
         background: url("../src/img/icons/burger-menu/menu.png");
         background-size: cover;
         background-color: $Pirple__background;
-        border-radius: 100vw;
+        border-radius: 100dvw;
         content: "";
         cursor: pointer;
         display: block;

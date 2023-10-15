@@ -1,58 +1,92 @@
 $link_color: #4444c4;
 $link_color_hover: #2b2b8d;
 
+@keyframes openAnimation {
+  from {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes closeAnimation {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
 dialog {
-  background-color: $Pirple__background;
+  animation: openAnimation 0.31415s linear;
+  background: $Backdrop__color;
+  backdrop-filter: blur(0.75rem);
   border: none;
-  border-radius: 1rem;
-  inset: 50% 50% auto auto;
-  padding: 1rem;
+  height: 100vh;
   position: fixed;
-  transform: translate(50%, -50%);
+  width: 100vw;
 
-  &::backdrop {
-    background: linear-gradient(to right, transparent, #00000059);
-    backdrop-filter: blur(16px);
+  &.closing {
+    animation: closeAnimation 0.31415s linear;
   }
 
-  h2 {
-    text-transform: uppercase;
-  }
+  .dialog {
+    display: grid;
+    place-items: center;
+    height: 100%;
 
-  div {
-    padding: 1rem 0;
-    text-align: start;
-    width: 30rem;
+    .dialog__message {
+      background-color: $Pirple__background;
+      border: none;
+      border-radius: 1rem;
+      padding: 1rem;
 
-    a {
-      color: $link_color;
-      position: relative;
-      transition: 0.31415s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+      h2 {
+        text-transform: uppercase;
+      }
 
-      &:hover {
-        color: $link_color_hover;
+      p {
+        padding-block: 1rem;
+        text-align: start;
+        width: 30rem;
 
-        &::after {
-          background: $link_color_hover;
-          opacity: 1;
-          width: 100%;
+        a {
+          color: $link_color;
+          position: relative;
+          transition: 0.31415s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+
+          &:hover {
+            color: $link_color_hover;
+
+            &::after {
+              background: $link_color_hover;
+              opacity: 1;
+              width: 100%;
+            }
+          }
+
+          &::after {
+            background: $link_color;
+            content: "";
+            height: 2px;
+            inset: auto auto 0 0;
+            opacity: 0;
+            position: absolute;
+            transition: 0.31415s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+            width: 0;
+          }
         }
       }
 
-      &::after {
-        background: $link_color;
-        content: "";
-        height: 2px;
-        inset: auto auto 0 0;
-        opacity: 0;
-        position: absolute;
-        transition: 0.31415s cubic-bezier(0.46, 0.03, 0.52, 0.96);
-        width: 0;
+      button {
+        @include buttons;
       }
     }
-  }
-
-  button {
-    @include buttons;
   }
 }

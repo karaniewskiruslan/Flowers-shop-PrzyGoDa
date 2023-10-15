@@ -2,7 +2,7 @@ const flowers = [
   {
     id: 0,
     img_src:
-      "https://www.kwiatowadostawa.pl/userdata/gfx/6673ef06705eda8ca3aa005170a4d600.jpg",
+      "https://images.pexels.com/photos/1488310/pexels-photo-1488310.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     name: "Bouquet #1 Roses",
     prise: {
       option_0: 14.99,
@@ -18,7 +18,7 @@ const flowers = [
   {
     id: 1,
     img_src:
-      "https://www.kwiatowadostawa.pl/userdata/gfx/009a63754545543f82efabfdddc6a716.jpg",
+      "https://images.pexels.com/photos/931147/pexels-photo-931147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     name: "Bouquet #2 Roses",
     prise: {
       option_0: 14.99,
@@ -26,15 +26,14 @@ const flowers = [
       option_2: 23.99,
     },
     options: {
-      option_0: "8 flowers",
-      option_1: "12 flowers",
-      option_2: "16 flowers",
+      option_0: "9 flowers",
+      option_1: "13 flowers",
+      option_2: "17 flowers",
     },
   },
   {
     id: 2,
-    img_src:
-      "https://i.etsystatic.com/6075796/r/il/d216b1/4174042036/il_fullxfull.4174042036_rtc1.jpg",
+    img_src: "https://i.etsystatic.com/6075796/r/il/d216b1/4174042036/il_fullxfull.4174042036_rtc1.jpg",
     name: "Bouquet for weddings",
     prise: {
       option_0: 12.99,
@@ -42,15 +41,14 @@ const flowers = [
       option_2: 16.99,
     },
     options: {
-      option_0: "12 flower",
-      option_1: "14 flower",
-      option_2: "16 flower",
+      option_0: "13 flower",
+      option_1: "15 flower",
+      option_2: "17 flower",
     },
   },
   {
     id: 3,
-    img_src:
-      "https://vilniusflowers.lt/wp-content/uploads/2019/09/100-red-roses-bouquet.jpg",
+    img_src: "https://vilniusflowers.lt/wp-content/uploads/2019/09/100-red-roses-bouquet.jpg",
     name: "Roses",
     prise: {
       option_0: 10.99,
@@ -69,8 +67,7 @@ const flowers = [
   },
   {
     id: 4,
-    img_src:
-      "https://cdn.atwilltech.com/flowerdatabase/p/perfect-love-bouquet-fresh-flowers-VA00707.425.jpg",
+    img_src: "https://cdn.atwilltech.com/flowerdatabase/p/perfect-love-bouquet-fresh-flowers-VA00707.425.jpg",
     name: "Bouquet from master",
     prise: {
       option_0: 14.99,

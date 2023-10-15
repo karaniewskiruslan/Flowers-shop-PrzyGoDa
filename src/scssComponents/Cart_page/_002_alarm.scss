@@ -17,10 +17,9 @@
 }
 
 #alarm_message {
+  align-items: flex-start;
   animation: openAlarm 0.31415s cubic-bezier(0.18, 0.64, 0.55, 0.94),
     closeAlarm 0.31415s cubic-bezier(0.18, 0.64, 0.55, 0.94) 4.78585s;
-
-  align-items: flex-start;
   aspect-ratio: 3 / 1;
   background-color: $costCart;
   border-radius: 1.5rem;
@@ -39,7 +38,7 @@
   }
 
   h3 {
-    margin: 0.5rem 0;
+    margin-block: 0.5rem;
     text-align: left;
   }
 

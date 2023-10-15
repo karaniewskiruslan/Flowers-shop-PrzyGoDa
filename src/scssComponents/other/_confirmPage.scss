@@ -1,5 +1,3 @@
-$backdrop__color: #00000093;
-
 @keyframes openAnimation {
   from {
     transform: scale(1.4);
@@ -11,21 +9,32 @@ $backdrop__color: #00000093;
   }
 }
 
+@keyframes closeAnimation {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
 .flower-assept {
   animation: openAnimation 0.31415s linear;
-  backdrop-filter: blur(10px);
-  background-color: $backdrop__color;
+  backdrop-filter: blur(0.75rem);
+  background-color: $Backdrop__color;
   display: grid;
-  height: 100vh;
+  height: 100dvh;
   inset: 0 0 auto auto;
   place-items: center;
   position: fixed;
   text-align: center;
-  width: 100vw;
+  width: 100dvw;
   z-index: 3;
 
-  h2 {
-    margin-bottom: 1rem;
+  &.closing {
+    animation: closeAnimation 0.31415s linear;
   }
 
   &__container {
@@ -48,7 +57,7 @@ $backdrop__color: #00000093;
     &[data-length_proove="true"]::after {
       position: absolute;
       background-color: $flower__background--select-active;
-      border-radius: 100vw;
+      border-radius: 100dvw;
       display: block;
       font-size: 0.75rem;
       outline: 1px solid $Text__color--White;
@@ -59,7 +68,7 @@ $backdrop__color: #00000093;
     &[data-length_proove="true"][data-ontop="false"]::before {
       content: "scroll up";
       inset: 16% 50% auto auto;
-      transform: translate(50%);
+      transform: translate(50%, -50%);
       transition: all 0.31415s;
 
       &[data-ontop="true"] {
@@ -85,7 +94,7 @@ $backdrop__color: #00000093;
       background: url("/src/img/icons/burger-menu/menuClose.png");
       background-color: $costCart;
       background-size: cover;
-      border-radius: 100vw;
+      border-radius: 100dvw;
       position: absolute;
       inset: var(--calculation) var(--calculation) auto auto;
       width: var(--close-button-size);
@@ -130,9 +139,9 @@ $backdrop__color: #00000093;
 
         img {
           aspect-ratio: 1;
-          width: 7.5rem;
           border-radius: 1rem;
           margin: 1rem;
+          width: 7.5rem;
         }
 
         h3 {

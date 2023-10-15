@@ -1,11 +1,11 @@
 .Flowers__About {
   @include formating;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 
   &__Paragraf {
-    margin-top: 1rem;
-
     article {
-      margin: 0.5rem 0;
       text-indent: 3rem;
       text-align: justify;
 

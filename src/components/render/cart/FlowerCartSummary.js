@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import flowers from "../../flowerslist/flowersList";
 import { CART_RENDER_ACTION_TYPE } from "../../../redusers/cartOrderRender";
-import { ObjectContext } from "../../../context/ObjectContext";
 import { CartItemsContext } from "../../../context/CartContext";
 
 export const FlowerCartSummary = () => {
-  const { cartValue, setCartValue } = useContext(CartItemsContext);
-  const { cartRender, dispatchRender } = useContext(ObjectContext);
+  const { cartValue, setCartValue, cartRender, dispatchRender } = useContext(CartItemsContext);
 
   return cartRender.map((item) => {
     const quantitySrt = item.quantity;
@@ -18,9 +16,7 @@ export const FlowerCartSummary = () => {
 
     Object.entries(quantitySrt).forEach((el) => {
       nmbItemsCount += el[1];
-      nmbItemCost +=
-        el[1] *
-        flowers.find((el) => el.id === item.id)?.prise[`option_${el[0]}`];
+      nmbItemCost += el[1] * flowers.find((el) => el.id === item.id)?.prise[`option_${el[0]}`];
     });
 
     const onToggleRemoveButton = () => {
@@ -29,9 +25,7 @@ export const FlowerCartSummary = () => {
 
       Object.entries(quantitySrt).forEach((el) => {
         nmbDeletingItems += el[1];
-        nmbDecrisingCost +=
-          el[1] *
-          flowers.find((el) => el.id === item.id)?.prise[`option_${el[0]}`];
+        nmbDecrisingCost += el[1] * flowers.find((el) => el.id === item.id)?.prise[`option_${el[0]}`];
       });
 
       setCartValue({
@@ -46,39 +40,31 @@ export const FlowerCartSummary = () => {
     };
 
     return (
-      <section
-        key={item.id}
-        className="Flowers__Cart--Summary__PositionContainer"
-      >
+      <section key={item.id} className="Flowers__Cart--Summary__PositionContainer">
         <img src={itemSearchSrt?.img_src} alt="" />
         <article>
           <span>
             <div>{itemSearchSrt?.name}</div>
           </span>
           <span>
-            {nmFlowersSrt === {} ? (
-              <></>
-            ) : (
-              nmFlowersSrt.map((element) => {
-                if (quantitySrt[element] === 0) {
-                  return <></>;
-                } else {
-                  return (
-                    <div
-                      key={element}
-                      className="Flowers__Cart--Summary__PositionContainer--Info"
-                    >
-                      <span key={itemSearchSrt?.options[`option_${element}`]}>
-                        {itemSearchSrt?.options[`option_${element}`]}
-                        {" - "}
-                        {itemSearchSrt?.prise[`option_${element}`]}$
-                      </span>
-                      <span>x{quantitySrt[element]}</span>
-                    </div>
-                  );
-                }
-              })
-            )}
+            {nmFlowersSrt.length === 0
+              ? null
+              : nmFlowersSrt.map((element) => {
+                  if (quantitySrt[element] === 0) {
+                    return null;
+                  } else {
+                    return (
+                      <div key={element} className="Flowers__Cart--Summary__PositionContainer--Info">
+                        <span key={itemSearchSrt?.options[`option_${element}`]}>
+                          {itemSearchSrt?.options[`option_${element}`]}
+                          {" - "}
+                          {itemSearchSrt?.prise[`option_${element}`]}$
+                        </span>
+                        <span>x{quantitySrt[element]}</span>
+                      </div>
+                    );
+                  }
+                })}
             <div className="Flowers__Cart--Summary__PositionContainer--Total">
               <div>
                 <span>Total:</span>
@@ -88,10 +74,7 @@ export const FlowerCartSummary = () => {
             </div>
           </span>
         </article>
-        <div
-          className="Flowers__Cart--Summary__PositionContainer--CloseButton"
-          onClick={onToggleRemoveButton}
-        ></div>
+        <div className="Flowers__Cart--Summary__PositionContainer--CloseButton" onClick={onToggleRemoveButton}></div>
       </section>
     );
   });

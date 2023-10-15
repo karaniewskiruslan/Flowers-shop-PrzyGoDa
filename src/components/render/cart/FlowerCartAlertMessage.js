@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { ObjectContext } from "../../../context/ObjectContext";
+import { CartItemsContext } from "../../../context/CartContext";
 
 export const FlowerCartAlertMessage = () => {
-  const { deliveryInfoReduser, cartRender } = useContext(ObjectContext);
+  const { deliveryInfoReduser, cartRender } = useContext(CartItemsContext);
 
   let fillPoleProver;
 
@@ -15,16 +15,12 @@ export const FlowerCartAlertMessage = () => {
     if (!cartRender.length && fillPoleProver) {
       return (
         <h3>
-          Your shopping cart is empty and you don't fill all order info poles.
-          Please, order something on your cart and fill all required poles
+          Your shopping cart is empty and you don't fill all order info poles. Please, order something on your cart and
+          fill all required poles
         </h3>
       );
     } else if (cartRender.length > 0 && fillPoleProver) {
-      return (
-        <h3>
-          You don't fill all order info poles. Please, fill all required poles
-        </h3>
-      );
+      return <h3>You don't fill all order info poles. Please, fill all required poles</h3>;
     } else if (!cartRender.length && !fillPoleProver) {
       return <h3>Your shopping cart is empty. Please, order something</h3>;
     }
