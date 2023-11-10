@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Flowers-shop-PrzyGoDa/static/css/main.b8842334.css",
-    "main.js": "/Flowers-shop-PrzyGoDa/static/js/main.5dbb6192.js",
+    "main.css": "/Flowers-shop-PrzyGoDa/static/css/main.bc370b9e.css",
+    "main.js": "/Flowers-shop-PrzyGoDa/static/js/main.0d3da2b0.js",
     "static/media/lavender-field.jpeg": "/Flowers-shop-PrzyGoDa/static/media/lavender-field.08ab786d97c24d1d712b.jpeg",
     "static/media/menuClose.png": "/Flowers-shop-PrzyGoDa/static/media/menuClose.92148a25be272e632484.png",
     "static/media/icofont.woff": "/Flowers-shop-PrzyGoDa/static/media/icofont.9ebcab9029fc88697a92.woff",
     "static/media/icofont.woff2": "/Flowers-shop-PrzyGoDa/static/media/icofont.63ae90921ef386f80b6b.woff2",
     "index.html": "/Flowers-shop-PrzyGoDa/index.html",
-    "main.b8842334.css.map": "/Flowers-shop-PrzyGoDa/static/css/main.b8842334.css.map",
-    "main.5dbb6192.js.map": "/Flowers-shop-PrzyGoDa/static/js/main.5dbb6192.js.map"
+    "main.bc370b9e.css.map": "/Flowers-shop-PrzyGoDa/static/css/main.bc370b9e.css.map",
+    "main.0d3da2b0.js.map": "/Flowers-shop-PrzyGoDa/static/js/main.0d3da2b0.js.map"
   },
   "entrypoints": [
-    "static/css/main.b8842334.css",
-    "static/js/main.5dbb6192.js"
+    "static/css/main.bc370b9e.css",
+    "static/js/main.0d3da2b0.js"
   ]
 }
