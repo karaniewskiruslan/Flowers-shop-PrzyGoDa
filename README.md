@@ -1,4 +1,4 @@
-[Open page on GitHub Pages](https://karanelus.github.io/Flowers-shop-PrzyGoDa/)
+[Open page on GitHub Pages](https://karaniewskiruslan.github.io/Flowers-shop-PrzyGoDa/)
 
 # Flowers shop "PrzyGoDa" by [Karanelus](https://github.com/Karanelus)
 
